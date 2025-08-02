@@ -1,0 +1,29 @@
+reducer: persistedReducer,
+    middleware: (getDefaultMiddleware) => getDefaultMiddleware({
+    serializableCheck: {
+        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+    },
+})
+}
+)
+
+const store = configureStore({
+    reducer: {
+        auth: authSlice,
+        job: jobSlice
+    },
+});
+
+export default store;
+=======
+const store = configureStore({
+    reducer: persistedReducer,
+    middleware: (getDefaultMiddleware) => getDefaultMiddleware({
+    serializableCheck: {
+        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+    },
+})
+}
+)
+
+export default store;
